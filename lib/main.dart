@@ -1,4 +1,5 @@
 import 'package:animation_ex01/people.dart';
+import 'package:animation_ex01/secondPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -130,6 +131,23 @@ class _AnimateState extends State<AnimationApp> {
                       opacity == 1 ? opacity = 0.2 : opacity = 1;
                     }
                   });
+                },
+              ),
+              ElevatedButton(
+                child: const SizedBox(
+                  width: 200,
+                  child: Row(
+                    children: [
+                      Hero(tag: 'detail', child: Icon(Icons.cake)),
+                      Text('이동하기'),
+                    ],
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SecondPage()));
                 },
               ),
             ],
